@@ -2,25 +2,15 @@
 # from codecs import encode as _dont_use_this_
 
 
-def rot13(message):
-    result = ""
+def rot13(str_in, shift):
+    alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    n = len(str_in)
+    str_out = ""
 
-    if message:
-        for char in message:
-            if 65 <= ord(char) <= 90 or 97 <= ord(char) <= 122:
-                if 65 <= ord(char) <= 90:
-                    # capitlized case
-                    if ord(char) + 13 > 90:
-                        char = chr(ord(char) + 13 - 90 + 65 - 1)
-                    else:
-                        char = chr(ord(char) + 13)
-                else:
-                    # lowercase
-                    if ord(char) + 13 > 122:
-                        char = chr(ord(char) + 13 - 122 + 97 - 1)
-            else:
-                char = chr(ord(char) + 13)
-        else:
-            pass
-        result += char
-    return result
+    for i in range(n):
+        c = str_in[i].upper()
+        loc = alpha.find(c)
+        newloc = (loc + shift) % 26
+        str_out += alpha[newloc]
+
+    return str_out
