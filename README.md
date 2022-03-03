@@ -1,4 +1,4 @@
-![flujo de trabajo de ejemplo](https://github.com/AlvaroGlezG/Integraci-n-Continua-con-GitHub-Actions/actions/workflows/pytest.yml/badge.svg)
+![flujo de trabajo de ejemplo](https://github.com/AlvaroGlezG/Integraci-n-Continua-con-GitHub-Actions/actions/workflows/python-app.yml/badge.svg)
 
 # Plantilla para desarrollo guiado por pruebas en Python
 
